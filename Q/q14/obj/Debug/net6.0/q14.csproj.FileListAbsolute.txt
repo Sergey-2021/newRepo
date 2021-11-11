@@ -1,0 +1,16 @@
+C:\Users\gjvbl\Desktop\les\Q\q14\bin\Debug\net6.0\q14.exe
+C:\Users\gjvbl\Desktop\les\Q\q14\bin\Debug\net6.0\q14.deps.json
+C:\Users\gjvbl\Desktop\les\Q\q14\bin\Debug\net6.0\q14.runtimeconfig.json
+C:\Users\gjvbl\Desktop\les\Q\q14\bin\Debug\net6.0\q14.dll
+C:\Users\gjvbl\Desktop\les\Q\q14\bin\Debug\net6.0\ref\q14.dll
+C:\Users\gjvbl\Desktop\les\Q\q14\bin\Debug\net6.0\q14.pdb
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.GlobalUsings.g.cs
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.csproj.AssemblyReference.cache
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.AssemblyInfoInputs.cache
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.AssemblyInfo.cs
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.csproj.CoreCompileInputs.cache
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.dll
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\ref\q14.dll
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.pdb
+C:\Users\gjvbl\Desktop\les\Q\q14\obj\Debug\net6.0\q14.genruntimeconfig.cache

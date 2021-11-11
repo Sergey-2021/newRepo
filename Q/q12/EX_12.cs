@@ -1,4 +1,5 @@
 ﻿// Удалить вторую цифру трёхзначного числа
+Console.Clear();
 int number = new Random().Next(100, 1000);
 int D (int x)
 {
