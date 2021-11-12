@@ -5,10 +5,12 @@ bool DayNum(int x)
 {
     return (x == 6 | x == 7);
 }
-int day = int.Parse(Console.ReadLine());
+System.Console.Write("Ведите число: ");
+int day = Convert.ToInt32(Console.ReadLine());
+
 if (day >= 1 & day <= 7)
 {
-    Console.WriteLine(DayNum(day));
+    Console.WriteLine($"Yes! Выходной {DayNum(day)}");
 }
 else
 {
