@@ -5,7 +5,7 @@ int[] FillArrey(int[] x)
 {
     for (int i = 0; i < x.Length; i++)
     {
-        x[i] = new Random().Next(0, 100);
+        x[i] = new Random().Next(-999, 1000);
     }
     return x;
 }
@@ -13,7 +13,7 @@ FillArrey(arrey);
 int count = 0;
 for (int i = 0; i < arrey.Length; i++)
 {
-    if (arrey[i] % 2 != 0 )
+    if (arrey[i] < 0)
         count++;
     System.Console.Write(arrey[i] + " ");
 }
