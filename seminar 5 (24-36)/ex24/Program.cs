@@ -1,10 +1,22 @@
-﻿// Найти кубы чисел от 1 до N
-int num = int.Parse(Console.ReadLine());
-int Get(int a)
+﻿//Найти кубы чисел от 1 до N
+int t = 5;
+
+int T(int a)
 {
-    return a*a*a;
+     int r = 1;
+    for (int i = 1; i <= a; i++)
+    {
+       
+        r =i*i*i;
+       
+    }
+   
+     return r;
 }
-for (int i = 1; i <= num; i++)
+for (int i = 1; i<=t; i++)
 {
-    System.Console.WriteLine(Get(i));
+    Console.WriteLine($"Куб числа {i} = {T(i)}");
 }
+System.Console.WriteLine();
+if (T(3)==27) System.Console.WriteLine("Проверка метода выполнена: УСПЕХ!");
+else System.Console.WriteLine("No");
