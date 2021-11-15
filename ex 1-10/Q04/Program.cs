@@ -21,7 +21,7 @@ void Max(int[] x)
     if (max < x[2]) max = x[2];
     Console.WriteLine($"Максимальное число из трех чисел - {max}");
 }
-
+FillArray(array);
 PrintArray(array);
 Console.WriteLine(" ");
 Max(array);
