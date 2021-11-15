@@ -8,4 +8,5 @@ int GetNum(int x)
     return (x < 0) ? a.Length - 1 : a.Length;
 }
 
+System.Console.WriteLine();
 System.Console.WriteLine($"Количество цифр в числе {num} = {GetNum(num)}");
