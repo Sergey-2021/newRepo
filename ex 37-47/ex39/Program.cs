@@ -29,7 +29,7 @@ FillArrey(a);
 System.Console.Write("Выводим массив a: ");
 Print(a);
 System.Console.WriteLine();
-System.Console.Write("Произведение пар чисел в одномерном массиве массив a: ");
+System.Console.Write("Произведение пар чисел в одномерном массиве  a: ");
 Print(Get(a));
 System.Console.WriteLine();
 
