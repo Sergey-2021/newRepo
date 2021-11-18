@@ -6,13 +6,33 @@ int GetCount(string x)
     int a = 0;
     for (int i = 0; i < x.Length; i++)
     {
-        if (a == 0 & Char.IsDigit(x[i]))
+     
+        if (a == 0 && Char.IsDigit(x[i]))
         {
-            a = 1;
-            count++;
+            if ((x[i]) == '0')
+            {
+                a = 0;
+            }
+            else
+            {
+                a = 1;
+                count++;
+            }
         }
-        else if (a >= 0 & !Char.IsDigit(x[i]))
+        else  if (x[i] == '-')
         {
+            a = 2;
+        }
+        else if (a == 2 && Char.IsDigit(x[i]))
+        {
+            a = 2;
+        }
+        else if (a >= 0 && !Char.IsDigit(x[i]))
+        {
+            // if ((x[i]) == '-')
+            // {
+            //     a = 1;
+            // }
             a = 0;
         }
     }
