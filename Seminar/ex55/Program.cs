@@ -15,16 +15,14 @@ int[,] GetFillArray(int[,] NewArray, int a, int b)   // Заполняем ма�
 }
 double[] GetArithMeanColumn(int[,] arr)
 {
-    double sum = 0;
     double[] result = new double[arr.GetLength(1)];
     for (int i = 0; i < arr.GetLength(1); i++)
     {
         for (int j = 0; j < arr.GetLength(0); j++)
         {
-            sum += arr[j, i];
+            result[i] += arr[j, i];
         }
-        result[i]=Convert.ToDouble(sum/arr.GetLength(0));
-        sum =0;
+        result[i] = result[i] / arr.GetLength(0);
     }
     return result;
 }
@@ -44,8 +42,8 @@ void PrintArray2D(int[,] x)
 void PrintArray(double[] x)
 {
     for (int i = 0; i < x.Length; i++)
-    {      
-        System.Console.Write($"({x[i]}) ");
+    {
+        System.Console.Write($"{i}=({x[i]}) ");
     }
 }
 
@@ -54,4 +52,4 @@ PrintArray2D(b);
 System.Console.WriteLine();
 
 PrintArray(GetArithMeanColumn(b));
-System.Console.Write("Cреднее арифметическое каждого из столбцов.");
+
