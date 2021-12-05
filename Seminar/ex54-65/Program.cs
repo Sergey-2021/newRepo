@@ -1,0 +1,121 @@
+﻿// 54. В матрице чисел найти сумму элементов главной диагонали
+
+int[,] GetFillArray(int[,] array, int from, int before)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(from, before);
+        }
+    }
+    return array;
+}
+
+void PrintArray2D(int[,] array)
+{
+    if (array.GetLength(0) != array.GetLength(1))
+    {
+        System.Console.WriteLine("Это не возможно.");
+    }
+    else
+    {
+
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+
+                System.Console.Write($"{array[i, j]} ");
+            }
+            System.Console.WriteLine();
+        }
+    }
+}
+void PrintArray(int[,] array)
+{
+
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+
+            System.Console.Write($"{array[i, j]} ");
+        }
+        System.Console.WriteLine();
+    }
+}
+
+int GetSumElementsDiagonal(int[,] array)
+{
+    int result = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        result += array[i, i];
+    }
+    return result;
+}
+
+int[,] myArray = new int[4, 4];
+int leftEdge = 1;
+int rightEdge = 10;
+myArray = GetFillArray(myArray, leftEdge, rightEdge);
+// PrintArray2D(myArray);
+System.Console.WriteLine();
+int sumElementDiagonal = GetSumElementsDiagonal(myArray);
+
+//56. Написать программу, которая обменивает элементы первой строки и последней строки
+int[,] GetExchangeRow(int[,] array)
+{
+    int[] boxStart = new int[array.GetLength(1)];
+    int[] boxEnd = new int[array.GetLength(1)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            boxStart[j] = array[0, j];
+            boxEnd[j] = array[array.GetLength(0) - 1, j];
+        }
+    }
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[0, j] = boxEnd[j];
+            array[array.GetLength(0) - 1, j] = boxStart[j];
+        }
+    }
+
+    return array;
+}
+
+myArray = GetExchangeRow(myArray);
+
+//57. Написать программу, упорядочивания по убыванию элементы каждой строки двумерной массива.
+
+// Не понял условие 57 задачи.
+
+// 58. Написать программу, которая в двумерном массиве заменяет строки на столбцы или сообщить
+void ReplaceRowColumn(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            int tmp = 0;
+            if (j > i)
+            {
+                tmp = array[i, j];
+                array[i, j] = array[j, i];
+                array[j, i] = tmp;
+            }
+        }
+    }
+}
+
+int[,] array01 = new int[3, 3];
+array01 = GetFillArray(array01, 1, 10);
+// 59. В прямоугольной матрице найти строку с наименьшей суммой элементов.
