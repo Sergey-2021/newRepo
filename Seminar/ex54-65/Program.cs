@@ -116,6 +116,45 @@ void ReplaceRowColumn(int[,] array)
     }
 }
 
+
+// 59. В прямоугольной матрице найти строку с наименьшей суммой элементов.
+
+int IndexRowMinSumElements(int[,] array)
+{
+    int sumRowElements = 0;
+    int min = 0;
+    for (int i = 0; i < 1; i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sumRowElements += array[i, j];
+            min = sumElementDiagonal;
+        }
+        sumRowElements=0;
+    }
+    int indexRow = 0;
+    for (int i = 1; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sumRowElements += array[i, j];
+
+        }
+        System.Console.WriteLine(sumRowElements);
+        if (sumRowElements < min)
+        {
+            min = sumRowElements;
+            indexRow = i;
+            sumRowElements = 0;
+        }
+    }
+    return indexRow;
+}
 int[,] array01 = new int[3, 3];
 array01 = GetFillArray(array01, 1, 10);
-// 59. В прямоугольной матрице найти строку с наименьшей суммой элементов.
+PrintArray2D(array01);
+System.Console.WriteLine();
+int indexRowMinSum = IndexRowMinSumElements(array01);
+System.Console.WriteLine(indexRowMinSum);
+
+
