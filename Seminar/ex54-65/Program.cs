@@ -14,24 +14,24 @@ int[,] GetFillArray(int[,] array, int from, int before)
 
 void PrintArray2D(int[,] array)
 {
-    if (array.GetLength(0) != array.GetLength(1))
-    {
-        System.Console.WriteLine("Это не возможно.");
-    }
-    else
+    // if (array.GetLength(0) != array.GetLength(1))
+    // {
+    //     System.Console.WriteLine("Это не возможно.");
+    // }
+    // else
+    // {
+
+    for (int i = 0; i < array.GetLength(0); i++)
     {
 
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
 
-            for (int j = 0; j < array.GetLength(1); j++)
-            {
-
-                System.Console.Write($"{array[i, j]} ");
-            }
-            System.Console.WriteLine();
+            System.Console.Write($"{array[i, j]} ");
         }
+        System.Console.WriteLine();
     }
+    // }
 }
 void PrintArray(int[,] array)
 {
@@ -130,7 +130,7 @@ int IndexRowMinSumElements(int[,] array)
             sumRowElements += array[i, j];
             min = sumElementDiagonal;
         }
-        sumRowElements=0;
+        sumRowElements = 0;
     }
     int indexRow = 0;
     for (int i = 1; i < array.GetLength(0); i++)
@@ -152,9 +152,58 @@ int IndexRowMinSumElements(int[,] array)
 }
 int[,] array01 = new int[3, 3];
 array01 = GetFillArray(array01, 1, 10);
-PrintArray2D(array01);
+
+
+
+
+//60. Составить частотный словарь элементов двумерного массива
+
+//61. Найти произведение двух матриц
+int[,] ProdMatrix(int[,] matrix, int[,] matrix1)
+{
+    int[,] matrix2 = new int[matrix.GetLength(1), matrix1.GetLength(0)];
+    if (matrix.GetLength(1) != matrix1.GetLength(0))
+    {
+        throw new Exception("Умножение не возможно! Количество столбцов первой матрицы не равно количеству строк второй матрицы.");
+    }
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int z = 0; z < matrix1.GetLength(1); z++)
+            {
+               
+                matrix2[i, j] += matrix[i, z] * matrix1[z, j];
+                System.Console.WriteLine(matrix2[i, z]);
+            }
+        }
+    }
+    return matrix2;
+}
+int[,] a = {{1,0,2},
+            {0,-1,3},
+            {4,0,5}};
+int[,] b = {{2,7,1},
+            {3,2,-4},
+            {1,-3,5}};
+
+
+// PrintArray2D(a.GetLength(1));
+// System.Console.WriteLine();
+// PrintArray2D(b.GetLength(0));
+int[,] c = ProdMatrix(a, b);
 System.Console.WriteLine();
-int indexRowMinSum = IndexRowMinSumElements(array01);
-System.Console.WriteLine(indexRowMinSum);
+PrintArray2D(c);
+
+//62. В двумерном массиве целых чисел. Удалить строку и столбец, на пересечении которых расположен наименьший элемент.
+
+//63. Сформировать трехмерный массив не повторяющимися двузначными числами показать его построчно на экран выводя индексы соответствующего элемента
+
+//64. Показать треугольник Паскаля *Сделать вывод в виде равнобедренного треугольника
+
+//65. Спирально заполнить двумерный массив:  1  2  3  4
+//                                           12 13 14  5
+//                                           11 16 15  6
+//                                           10  9  8  7
 
 
