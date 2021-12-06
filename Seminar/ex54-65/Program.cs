@@ -1,4 +1,12 @@
 ﻿// 54. В матрице чисел найти сумму элементов главной диагонали
+void Print(int[] x)
+{
+    for (int i = 0; i < x.Length; i++)
+    {
+
+        System.Console.Write(x[i] + " ");
+    }
+}
 
 int[,] GetFillArray(int[,] array, int from, int before)
 {
@@ -153,11 +161,8 @@ int IndexRowMinSumElements(int[,] array)
 int[,] array01 = new int[3, 3];
 array01 = GetFillArray(array01, 1, 10);
 
-
-
-
 //60. Составить частотный словарь элементов двумерного массива
-int[] T(int[,] array)
+int[] GetArrayFromMatrix(int[,] array)
 {
     int[] x = new int[0];
     for (int i = 0; i < array.GetLength(0); i++)
@@ -171,7 +176,7 @@ int[] T(int[,] array)
     return x;
 }
 
-string Y(int[] x)
+string FrequencyElementArray(int[] x)
 {
     string a = string.Empty;
     int count = 0;
@@ -192,21 +197,13 @@ string Y(int[] x)
     return a;
 }
 
-void Print(int[] x)
-{
-    for (int i = 0; i < x.Length; i++)
-    {
-
-        System.Console.Write(x[i] + " ");
-    }
-}
 PrintArray2D(array01);
 System.Console.WriteLine();
-int[] r = T(array01);
-Array.Sort(r);
+int[] arr = GetArrayFromMatrix(array01);
+Array.Sort(arr);
 System.Console.WriteLine();
-string bob = Y(r);
-System.Console.WriteLine(bob);
+string frequency = FrequencyElementArray(arr);
+System.Console.WriteLine(frequency);
 
 
 //61. Найти произведение двух матриц
