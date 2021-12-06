@@ -157,6 +157,57 @@ array01 = GetFillArray(array01, 1, 10);
 
 
 //60. Составить частотный словарь элементов двумерного массива
+int[] T(int[,] array)
+{
+    int[] x = new int[0];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Array.Resize(ref x, x.Length + 1);
+            x[x.Length - 1] = array[i, j];
+        }
+    }
+    return x;
+}
+
+string Y(int[] x)
+{
+    string a = string.Empty;
+    int count = 0;
+    for(int j =0; j <x.Length;j++)
+    {
+        for (int i = 0; i < x.Length; i++)
+        {
+            if (x[i] == x[j])
+            {
+                count++;  
+            }
+        }
+        a += $"{x[j]} частотность {count}\n";
+        j+=count-1;
+        count = 0;
+        
+    }
+    return a;
+}
+
+void Print(int[] x)
+{
+    for (int i = 0; i < x.Length; i++)
+    {
+
+        System.Console.Write(x[i] + " ");
+    }
+}
+PrintArray2D(array01);
+System.Console.WriteLine();
+int[] r = T(array01);
+Array.Sort(r);
+System.Console.WriteLine();
+string bob = Y(r);
+System.Console.WriteLine(bob);
+
 
 //61. Найти произведение двух матриц
 int[,] ProdMatrix(int[,] matrix, int[,] matrix1)
@@ -172,9 +223,9 @@ int[,] ProdMatrix(int[,] matrix, int[,] matrix1)
         {
             for (int z = 0; z < matrix1.GetLength(1); z++)
             {
-               
+
                 matrix2[i, j] += matrix[i, z] * matrix1[z, j];
-                System.Console.WriteLine(matrix2[i, z]);
+
             }
         }
     }
@@ -193,9 +244,10 @@ int[,] b = {{2,7,1},
 // PrintArray2D(b.GetLength(0));
 int[,] c = ProdMatrix(a, b);
 System.Console.WriteLine();
-PrintArray2D(c);
+
 
 //62. В двумерном массиве целых чисел. Удалить строку и столбец, на пересечении которых расположен наименьший элемент.
+
 
 //63. Сформировать трехмерный массив не повторяющимися двузначными числами показать его построчно на экран выводя индексы соответствующего элемента
 
