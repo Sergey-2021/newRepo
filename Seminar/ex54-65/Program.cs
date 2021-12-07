@@ -289,7 +289,7 @@ int[,] GetMatrixDeletRowAndColumn(int[,] matrix, int[] array)
             {
                 if (j != array[1])
                 {
-                    mo[countX, countY] = matrix[i,j];
+                    mo[countX, countY] = matrix[i, j];
                     countY++;
                 }
             }
@@ -310,7 +310,40 @@ int[,] myD = GetMatrixDeletRowAndColumn(myR, myC);
 // PrintArray2D(myD);
 
 //63. Сформировать трехмерный массив не повторяющимися двузначными числами показать его построчно на экран выводя индексы соответствующего элемента
-
+int[,,] GetArray3D(int a, int b, int c)
+{
+    int[,,] matrix3D = new int[a, b, c];
+    int count = 10;
+    for (int i = 0; i < matrix3D.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix3D.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix3D.GetLength(2); k++)
+            {
+                matrix3D[i, j, k] = count;
+                count++;
+            }
+        }
+    }
+    return matrix3D;
+}
+void PrintMatrix3D(int[,,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            {
+                System.Console.Write($"{matrix[i, j, k]}({i},{j},{k}) / ");
+            }
+        }
+        System.Console.WriteLine();
+    }
+}
+int[,,] doubleA = GetArray3D(3, 3, 3);
+System.Console.WriteLine();
+PrintMatrix3D(doubleA);
 //64. Показать треугольник Паскаля *Сделать вывод в виде равнобедренного треугольника
 
 //65. Спирально заполнить двумерный массив:  1  2  3  4
