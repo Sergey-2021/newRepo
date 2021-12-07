@@ -180,30 +180,30 @@ string FrequencyElementArray(int[] x)
 {
     string a = string.Empty;
     int count = 0;
-    for(int j =0; j <x.Length;j++)
+    for (int j = 0; j < x.Length; j++)
     {
         for (int i = 0; i < x.Length; i++)
         {
             if (x[i] == x[j])
             {
-                count++;  
+                count++;
             }
         }
         a += $"{x[j]} частотность {count}\n";
-        j+=count-1;
+        j += count - 1;
         count = 0;
-        
+
     }
     return a;
 }
 
-PrintArray2D(array01);
-System.Console.WriteLine();
-int[] arr = GetArrayFromMatrix(array01);
-Array.Sort(arr);
-System.Console.WriteLine();
-string frequency = FrequencyElementArray(arr);
-System.Console.WriteLine(frequency);
+// PrintArray2D(array01);
+// System.Console.WriteLine();
+// int[] arr = GetArrayFromMatrix(array01);
+// Array.Sort(arr);
+// System.Console.WriteLine();
+// string frequency = FrequencyElementArray(arr);
+// System.Console.WriteLine(frequency);
 
 
 //61. Найти произведение двух матриц
@@ -240,11 +240,74 @@ int[,] b = {{2,7,1},
 // System.Console.WriteLine();
 // PrintArray2D(b.GetLength(0));
 int[,] c = ProdMatrix(a, b);
-System.Console.WriteLine();
 
 
 //62. В двумерном массиве целых чисел. Удалить строку и столбец, на пересечении которых расположен наименьший элемент.
 
+int[,] GetMatrix(int a, int b)
+{
+    int[,] array = new int[a, b];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 15);
+        }
+    }
+    return array;
+}
+int[] GetArrayMinRowAndColumn(int[,] matrix)
+{
+    int[] ar = new int[2];
+    int min = matrix[0, 0];
+    int[,] array = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (min > matrix[i, j])
+            {
+                min = matrix[i, j];
+                ar[0] = i;
+                ar[1] = j;
+            }
+        }
+    }
+    return ar;
+}
+
+int[,] GetMatrixDeletRowAndColumn(int[,] matrix, int[] array)
+{
+    int[,] mo = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+    int countX = 0;
+    int countY = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        if (i != array[0])
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (j != array[1])
+                {
+                    mo[countX, countY] = matrix[i,j];
+                    countY++;
+                }
+            }
+            countX++;
+            countY = 0;
+        }
+    }
+    return mo;
+}
+
+int[,] myR = GetMatrix(3, 3);
+int[] myC = GetArrayMinRowAndColumn(myR);
+int[,] myD = GetMatrixDeletRowAndColumn(myR, myC);
+// PrintArray2D(myR);
+// System.Console.WriteLine();
+// // Print(myC);
+// System.Console.WriteLine();
+// PrintArray2D(myD);
 
 //63. Сформировать трехмерный массив не повторяющимися двузначными числами показать его построчно на экран выводя индексы соответствующего элемента
 
